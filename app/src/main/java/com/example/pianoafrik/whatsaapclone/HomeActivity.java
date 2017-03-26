@@ -378,6 +378,7 @@ public class HomeActivity extends FunctionActivity {
                                                                            date, numberOfCalls, timeOfCall );
 
                                     //Populate Db
+                                    //Todo: save the api calls array in greenDao
                                     getDao.getCallBackUpDao().insert(backDataUp);
 
                                     count++;
@@ -435,7 +436,7 @@ public class HomeActivity extends FunctionActivity {
             return rootView;
         }
 
-        //Todo: save the api calls array in greenDao
+
 
 
 
