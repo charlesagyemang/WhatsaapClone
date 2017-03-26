@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.pianoafrik.whatsaapclone.HomeActivity">
+    <item
+        android:id="@+id/action_group"
+        android:orderInCategory="100"
+        android:title="New group"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_search"
+
+        android:orderInCategory="100"
+        android:title="Search"
+        android:icon="@mipmap/ic_search_black_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_broadcast"
+        android:orderInCategory="100"
+        android:title="New broadcast"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_whatsaap_web"
+        android:orderInCategory="100"
+        android:title="Whatsaap Web"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/starred_messages"
+        android:orderInCategory="100"
+        android:title="Starred messages"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="Settings"
+        app:showAsAction="never" />
+
+
+</menu>
