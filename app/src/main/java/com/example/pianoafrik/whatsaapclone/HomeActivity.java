@@ -40,6 +40,8 @@ import com.example.pianoafrik.whatsaapclone.fakeadapter.ChatAdapter;
 import com.example.pianoafrik.whatsaapclone.fakeadapter.StatusAdapter;
 import com.example.pianoafrik.whatsaapclone.fakemodel.Chat;
 import com.example.pianoafrik.whatsaapclone.fakemodel.Status;
+import com.example.pianoafrik.whatsaapclone.greendao.CallBackUp;
+import com.example.pianoafrik.whatsaapclone.greendao.DaoSession;
 import com.squareup.picasso.Downloader;
 import com.squareup.picasso.Picasso;
 
@@ -54,6 +56,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Serializable;
+import java.lang.reflect.GenericArrayType;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -61,7 +64,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends FunctionActivity {
 
 
 
@@ -76,8 +79,8 @@ public class HomeActivity extends AppCompatActivity {
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     TabLayout tabLayout;
-    String json_string;
-    public static JSONArray json_array;
+    public static DaoSession getDao;
+
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -103,7 +106,7 @@ public class HomeActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setCurrentItem(1);
 
-
+        getDao = getAppDaoSession();
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
@@ -319,6 +322,8 @@ public class HomeActivity extends AppCompatActivity {
 
             json_object = (TextView)rootView.findViewById(R.id.json_string);
 
+
+
             //ApiCall
             //Make  StirngRequest
             //First
@@ -340,27 +345,11 @@ public class HomeActivity extends AppCompatActivity {
 
                             List <Call> calls = new ArrayList<>();
 
-                            Call caller1 = new Call(
-                                            "Charles",
-                                            "https://s26.postimg.org/5bxou4sy1/Faa_FMajor_inv0.png",
-                                            true,
-                                            "27Th March",
-                                            1,
-                                            "12:00pm"
-                                    );
-
-                            Call caller2 = new Call(
-                                    "Charles",
-                                    "https://s26.postimg.org/5bxou4sy1/Faa_FMajor_inv0.png",
-                                    true,
-                                    "27Th March",
-                                    1,
-                                    "12:00pm"
-                            );
 
 
-                            adapter.add(caller1);
-                            adapter.add(caller2);
+
+                            //Empty Db
+                            getDao.getCallBackUpDao().deleteAll();
 
 
                             try {
@@ -381,14 +370,21 @@ public class HomeActivity extends AppCompatActivity {
                                     numberOfCalls =  JO.getInt("number_of_calls");
                                     timeOfCall     = JO.getString("time_of_call");
 
-                                    Call call  =  new Call(callerName, callerPicture, callTypeIcon, date, numberOfCalls, timeOfCall);
+                                    Call call  =  new Call(callerName, callerPicture, callTypeIcon,
+                                                            date, numberOfCalls, timeOfCall);
                                     adapter.add(call);
 
-                                   Toast.makeText(rootView.getContext(), String.valueOf(numberOfCalls), Toast.LENGTH_LONG).show();
+                                    CallBackUp backDataUp = new CallBackUp(null,callerName, callerPicture, callTypeIcon,
+                                                                           date, numberOfCalls, timeOfCall );
+
+                                    //Populate Db
+                                    getDao.getCallBackUpDao().insert(backDataUp);
 
                                     count++;
 
                                 }
+
+                                Toast.makeText(rootView.getContext(), String.valueOf( getDao.getCallBackUpDao().loadAll().size()), Toast.LENGTH_LONG).show();
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -403,34 +399,29 @@ public class HomeActivity extends AppCompatActivity {
 
                     //TODO: create a greenDao db and load the saved json here
 
+                    List <CallBackUp> callBackUp = getDao.getCallBackUpDao().loadAll();
+                    List <Call> backUp = new ArrayList<Call>();
 
-                    List <Call> calls = new ArrayList<>(Arrays.asList(
-                            new Call("Charles",
-                                    "https://s26.postimg.org/5bxou4sy1/Faa_FMajor_inv0.png",
-                                    true,
-                                    "27Th March",
-                                    1,
-                                    "12:00pm"
-                            ),
-                            new Call("Kinoti",
-                                    "https://s26.postimg.org/5tsu9ziix/Soo_FMajor_inv0.png",
-                                    false,
-                                    "27Th March",
-                                    2,
-                                    "1:00pm"
-                            ),
-                            new Call("John",
-                                    "https://s26.postimg.org/4pck9u07d/F_SOFAS.png",
-                                    true,
-                                    "27Th March",
-                                    1,
-                                    "2:00pm"
-                            )
-                    ));
+                    for(int i = 0; i < callBackUp.size(); i++){
 
-                    CallAdapter adapter = new CallAdapter(rootView.getContext(), R.layout.calls_page_item, calls);
+                        CallBackUp callBackUpEach = callBackUp.get(i);
+
+                        Call call  = new Call (callBackUpEach.getCallerName(),
+                                                callBackUpEach.getCallerPicture(),
+                                                callBackUpEach.getCallTypeIcon(),
+                                                callBackUpEach.getDate(),
+                                                callBackUpEach.getNumberOfCalls(),
+                                                callBackUpEach.getTimeOfCall());
+
+                        backUp.add(call);
+                    }
+
+
+                    CallAdapter adapter = new CallAdapter(rootView.getContext(), R.layout.calls_page_item, backUp);
                     callsList.setFooterDividersEnabled(false);
                     callsList.setAdapter(adapter);
+
+
 
                 }
             });
@@ -445,6 +436,8 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         //Todo: save the api calls array in greenDao
+
+
 
     }
 
@@ -577,9 +570,5 @@ public class HomeActivity extends AppCompatActivity {
 
  //   String url = "https://whatsaapcloneapi.herokuapp.com/calls";
   //      new GetJson().execute();
-
-
-
-
 
 }

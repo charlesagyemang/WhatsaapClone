@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 import com.example.pianoafrik.whatsaapclone.fakemodel.Chat;
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends FunctionActivity {
 
     ImageView imageView;
     @Override
