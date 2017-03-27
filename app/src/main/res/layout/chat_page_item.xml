@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:textSize="7pt"
-            android:textColor="#000000"
+            android:textColor="#6a6a6a"
             android:id="@+id/tvMessage"
             />
 
@@ -65,7 +65,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="top"
             android:gravity="end"
-            android:textColor="@color/colorAccent"
+            android:textColor="#6a6a6a"
             android:text="Time sent"
             android:textSize="8pt"
             android:id="@+id/tvTimeSent"
@@ -81,29 +81,14 @@
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:textSize="8pt"
-                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
                 android:textColor="@color/colorAccent"
-
-                android:text="   2"
+                android:text=" 2"
                 android:id="@+id/textView"
                 android:layout_marginBottom="11dp"
-
                 android:layout_alignParentBottom="true"
-                android:layout_toLeftOf="@+id/textView2"
-                android:layout_toStartOf="@+id/textView2" />
+                android:layout_alignParentRight="true" />
 
-
-            <TextView
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:textSize="8pt"
-                android:textColor="#bab8b8"
-                android:text="  >"
-                android:layout_alignBaseline="@+id/textView"
-                android:layout_alignBottom="@+id/textView"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:id="@+id/textView2" />
 
 
         </RelativeLayout>
@@ -116,7 +101,7 @@
     <LinearLayout
         android:layout_marginTop="1dp"
         android:layout_width="match_parent"
-        android:layout_marginLeft="30pt"
+        android:layout_marginLeft="35pt"
         android:layout_height="1dp"
         android:background="#cac7c7">
 

@@ -176,16 +176,16 @@ public class HomeActivity extends FunctionActivity {
 
             ListView listView = (ListView)rootView.findViewById(R.id.chat_list_item);
             final List<Chat> chatList = new ArrayList<>(Arrays.asList(
-                    new Chat (R.drawable.pic_two, "Babe", "Love u ):", "1:00pm"),
-                    new Chat (R.drawable.pic_three, "ExBae", "You good?", "2:00pm"),
-                    new Chat (R.drawable.pic_four, "Next Bae", "I didnt get you", "3:00pm"),
-                    new Chat (R.drawable.image_five, "Yorn", "Charlie xup?", "4:00pm"),
-                    new Chat (R.drawable.image_seven, "Devless", "Charlie xup?", "5:00pm"),
-                    new Chat (R.drawable.image_ten, "Ashwin", "Charlie xup?", "6:00pm"),
-                    new Chat (R.drawable.pic_two, "Side Chic", "Charlie xup?", "7:00pm"),
-                    new Chat (R.drawable.pic_two, "Kelly", "Charlie xup?", "8:00pm"),
-                    new Chat (R.drawable.pic_two, "Counsellor", "Charlie xup?", "9:00pm"),
-                    new Chat (R.drawable.pic_two, "Maria", "Charlie xup?", "10:00pm")
+                    new Chat (R.drawable.pic_two, "Babe", "Love u ):", "1:00PM"),
+                    new Chat (R.drawable.pic_three, "ExBae", "You good?", "Yesterday"),
+                    new Chat (R.drawable.pic_four, "Next Bae", "I didnt get you", "3:00PM"),
+                    new Chat (R.drawable.image_five, "Yorn", "Charlie xup?", "4:00PM"),
+                    new Chat (R.drawable.image_seven, "Devless", "Charlie xup?", "5:00PM"),
+                    new Chat (R.drawable.image_ten, "Ashwin", "Charlie xup?", "6:00PM"),
+                    new Chat (R.drawable.pic_two, "Side Chic", "Charlie xup?", "12/03/2016"),
+                    new Chat (R.drawable.pic_two, "Kelly", "Charlie xup?", "8:00PM"),
+                    new Chat (R.drawable.pic_two, "Counsellor", "Charlie xup?", "9:00PM"),
+                    new Chat (R.drawable.pic_two, "Maria", "Charlie xup?", "10:00PM")
 
 
             ));

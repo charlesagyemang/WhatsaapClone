@@ -9,11 +9,13 @@ public class Status {
     private int    profilePicture;
     private String nameOfSender;
     private String message;
+    private int    messageCount;
 
     public Status(int profilePicture, String nameOfSender, String message) {
         this.profilePicture = profilePicture;
         this.nameOfSender = nameOfSender;
         this.message = message;
+
     }
 
     public int getProfilePicture() {

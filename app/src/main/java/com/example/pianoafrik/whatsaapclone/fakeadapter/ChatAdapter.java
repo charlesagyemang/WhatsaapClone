@@ -70,7 +70,7 @@ public class ChatAdapter extends ArrayAdapter<Chat> {
 
         viewHolder.name.setText(chat.getNameOfSender());
         viewHolder.message.setText(chat.getMessge());
-        viewHolder.timeSent.setText("" + chat.getMessageSent());
+        viewHolder.timeSent.setText("" + chat.getMessageSent() + ".");
 
 
         return  convertView;
