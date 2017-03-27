@@ -7,94 +7,90 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="10px"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10px">
-
-
-    <com.mikhaellopez.circularimageview.CircularImageView
-        android:id="@+id/img_status_profile"
+        android:layout_marginBottom="10px"
         android:layout_marginTop="10px"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:src="@drawable/roco"
-        app:civ_border_color="#EEEEEE"
-        app:civ_border_width="1dp"
-        app:civ_shadow_color="#8BC34A"
-        app:civ_shadow_radius="10" />
+        android:orientation="horizontal">
 
 
-
-    <LinearLayout
-        android:layout_width="400px"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:orientation="vertical"
-        >
-        <TextView
-            android:layout_marginTop="30px"
-            android:layout_marginLeft="10px"
-            android:layout_width="400px"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:textSize="9pt"
-            android:id="@+id/tvName"/>
-
-        <TextView
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/img_status_profile"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_marginTop="10px"
-            android:layout_marginLeft="10px"
+            android:src="@drawable/roco"
+            app:civ_border_color="#EEEEEE"
+            app:civ_border_width="1dp"
+            app:civ_shadow_color="#8BC34A"
+            app:civ_shadow_radius="10" />
+
+
+        <LinearLayout
             android:layout_width="400px"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:textSize="7pt"
-            android:textColor="#6a6a6a"
-            android:id="@+id/tvMessage"
-            />
-
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_marginTop="30px"
             android:layout_height="match_parent"
-            android:layout_gravity="top"
-            android:gravity="end"
-            android:textColor="#6a6a6a"
-            android:text="Time sent"
-            android:textSize="8pt"
-            android:id="@+id/tvTimeSent"
-            />
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="400px"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="30px"
+                android:text="Name"
+                android:textColor="#000000"
+                android:textSize="9pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="400px"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:text="Name"
+                android:textColor="#6a6a6a"
+                android:textSize="7pt" />
+
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
+            android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:textSize="8pt"
-                android:layout_alignParentEnd="true"
-                android:textColor="@color/colorAccent"
-                android:text="  2"
-                android:id="@+id/message_count"
-                android:layout_marginBottom="11dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true" />
+                android:id="@+id/tvTimeSent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_marginTop="30px"
+                android:gravity="end"
+                android:text="Time sent"
+                android:textColor="#6a6a6a"
+                android:textSize="8pt" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp">
+
+
+                <TextView
+                    android:id="@+id/message_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+
+                    android:textSize="10pt"
+                    android:text="2"
+                    />
+
+            </RelativeLayout>
+
 
 
 
         </RelativeLayout>
-
-
-    </RelativeLayout>
 
     </LinearLayout>
 
