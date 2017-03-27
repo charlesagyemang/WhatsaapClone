@@ -25,7 +25,7 @@ public class ChatAdapter extends ArrayAdapter<Chat> {
 
     private static class ViewHolder {
         ImageView profilePicture;
-        TextView name, message, timeSent;
+        TextView name, message, timeSent, messageCount;
 
     }
 
@@ -58,6 +58,7 @@ public class ChatAdapter extends ArrayAdapter<Chat> {
             viewHolder.name = (TextView)convertView.findViewById(R.id.tvName);
             viewHolder.message = (TextView)convertView.findViewById(R.id.tvMessage);
             viewHolder.timeSent = (TextView)convertView.findViewById(R.id.tvTimeSent);
+            viewHolder.messageCount = (TextView)convertView.findViewById(R.id.message_count);
 
             convertView.setTag(viewHolder);
 
@@ -67,10 +68,10 @@ public class ChatAdapter extends ArrayAdapter<Chat> {
         }
 
         viewHolder.profilePicture.setImageResource(chat.getProfilePicture());
-
         viewHolder.name.setText(chat.getNameOfSender());
         viewHolder.message.setText(chat.getMessge());
-        viewHolder.timeSent.setText("" + chat.getMessageSent() + ".");
+        viewHolder.timeSent.setText("" + chat.getMessageSent() );
+        viewHolder.messageCount.setText("" + chat.getMessagesCount());
 
 
         return  convertView;

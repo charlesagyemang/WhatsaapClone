@@ -83,8 +83,8 @@
                 android:textSize="8pt"
                 android:layout_alignParentEnd="true"
                 android:textColor="@color/colorAccent"
-                android:text=" 2"
-                android:id="@+id/textView"
+                android:text="  2"
+                android:id="@+id/message_count"
                 android:layout_marginBottom="11dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true" />
