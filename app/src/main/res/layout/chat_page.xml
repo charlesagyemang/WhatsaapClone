@@ -3,22 +3,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="8pt"
+    android:paddingLeft="8pt"
+    android:paddingTop="8pt"
+    android:paddingBottom="2pt"
     tools:context="com.example.pianoafrik.whatsaapclone.HomeActivity$PlaceholderFragment">
 
 
-   <ListView
-       android:layout_width="match_parent"
-       android:scrollbars="none"
-       android:layout_height="match_parent"
-      android:divider="@null"
-       android:id="@+id/chat_list_item">
 
-   </ListView>
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+      <ListView
+          android:layout_width="match_parent"
+          android:scrollbars="none"
+          android:layout_height="wrap_content"
+          android:divider="@null"
+          android:id="@+id/chat_list_item">
+
+
+      </ListView>
+
+      <android.support.design.widget.FloatingActionButton
+          android:id="@+id/fab"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:srcCompat="@mipmap/ic_comment_white_24dp2"
+          android:layout_alignParentEnd="true"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentRight="true" />
+   </RelativeLayout>
+
 
 
 

@@ -116,7 +116,7 @@ public class HomeActivity extends FunctionActivity {
     }
 
     private void setUpTabIcons () {
-        tabLayout.getTabAt(0).setIcon(R.mipmap.ic_comment_white_24dp2);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_local_see_white_24dp);
 //        tabLayout.getTabAt(1).setIcon(R.mipmap.ic_launcher);
 //        tabLayout.getTabAt(2).setIcon(R.mipmap.ic_launcher);
 //        tabLayout.getTabAt(3).setIcon(R.mipmap.ic_launcher);
@@ -385,7 +385,7 @@ public class HomeActivity extends FunctionActivity {
 
                                 }
 
-                                Toast.makeText(rootView.getContext(), String.valueOf( getDao.getCallBackUpDao().loadAll().size()), Toast.LENGTH_LONG).show();
+                                //Toast.makeText(rootView.getContext(), String.valueOf( getDao.getCallBackUpDao().loadAll().size()), Toast.LENGTH_LONG).show();
 
                             } catch (JSONException e) {
                                 e.printStackTrace();

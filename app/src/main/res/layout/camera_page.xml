@@ -43,7 +43,6 @@
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             app:srcCompat="@mipmap/ic_comment_white_24dp2"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
