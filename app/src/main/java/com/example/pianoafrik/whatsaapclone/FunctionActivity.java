@@ -3,7 +3,8 @@ package com.example.pianoafrik.whatsaapclone;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.pianoafrik.whatsaapclone.greendao.DaoSession;
+import com.example.pianoafrik.whatsaapclone.fakemodel.DaoSession;
+
 
 public class FunctionActivity extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class FunctionActivity extends AppCompatActivity {
     }
 
 
-    public  DaoSession getAppDaoSession () {
+    public DaoSession getAppDaoSession () {
        return  myApplication.getDaoSession();
     }
 

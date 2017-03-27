@@ -2,15 +2,12 @@ package com.example.pianoafrik.whatsaapclone;
 
 import android.app.Application;
 
-import com.example.pianoafrik.whatsaapclone.greendao.DaoMaster;
-import com.example.pianoafrik.whatsaapclone.greendao.DaoSession;
+
+import com.example.pianoafrik.whatsaapclone.fakemodel.DaoMaster;
+import com.example.pianoafrik.whatsaapclone.fakemodel.DaoSession;
 
 import org.greenrobot.greendao.database.Database;
 
-
-/**
- * Created by pianoafrik on 3/26/17.
- */
 
 public class MyApplication extends Application {
 

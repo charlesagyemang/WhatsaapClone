@@ -69,7 +69,7 @@ public class ChatAdapter extends ArrayAdapter<Chat> {
 
         viewHolder.profilePicture.setImageResource(chat.getProfilePicture());
         viewHolder.name.setText(chat.getNameOfSender());
-        viewHolder.message.setText(chat.getMessge());
+        viewHolder.message.setText(chat.getMessage());
         viewHolder.timeSent.setText("" + chat.getMessageSent() );
         viewHolder.messageCount.setText("" + chat.getMessagesCount());
 
