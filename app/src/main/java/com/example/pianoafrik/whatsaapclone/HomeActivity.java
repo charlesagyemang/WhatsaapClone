@@ -207,7 +207,7 @@ public class HomeActivity extends FunctionActivity {
 
                 }
             });
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
 
             //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
@@ -479,17 +479,17 @@ public class HomeActivity extends FunctionActivity {
 
             //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
 
-            ImageView imageView = (ImageView)rootView.findViewById(R.id.imgRondo);
-
-
-            Picasso.with(this.getContext())
-                    .load("https://s26.postimg.org/cdr12l761/Doo_Fmajor_inv0.png")
-                    .placeholder(R.drawable.image_seven)   // optional
-                    .error(R.drawable.image_seven)      // optional
-                    .resize(60, 60)                        // optional
-                    .rotate(180)                             // optional
-                    .into(imageView);
-            return rootView;
+//            ImageView imageView = (ImageView)rootView.findViewById(R.id.imgRondo);
+//
+//
+//            Picasso.with(this.getContext())
+//                    .load("https://s26.postimg.org/cdr12l761/Doo_Fmajor_inv0.png")
+//                    .placeholder(R.drawable.image_seven)   // optional
+//                    .error(R.drawable.image_seven)      // optional
+//                    .resize(60, 60)                        // optional
+//                    .rotate(180)                             // optional
+//                    .into(imageView);
+           return rootView;
         }
     }
 
